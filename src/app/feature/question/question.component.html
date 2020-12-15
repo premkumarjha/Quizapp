@@ -1,0 +1,45 @@
+
+<div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayout.md="column" >
+<div fxFlex="5" fxFlexFill  ></div>
+    <div fxFlex="40" fxFlexFill >
+
+<h2 style="background-color: #20B2AA;
+width: 100px;
+margin-left: 620px;
+color: white;
+/* justify-content: center; */
+padding-left: 49px;margin-top: 50px;"> QUIZ </h2>
+<mat-card>
+<div>
+    <h2><span style="margin-right: 12px">{{items.id}})</span>{{items.name}}</h2>
+
+    <mat-radio-group aria-labelledby="example-radio-group-label" *ngFor="let option of items.options "   class="example-radio-group"  >
+      
+        <mat-radio-button class="example-radio-group"   [checked]="option.checked" [value]="option" (change)="onItemChange(option,items.options,items)" >{{option.name}}</mat-radio-button>
+
+    </mat-radio-group>
+    <!-- <section class="example-section" *ngFor="let option of items.options ">
+        <mat-checkbox class="example-margin" [checked]="option.checked"  (change)="onItemChange(option,items.options,items)">{{option.name}}</mat-checkbox>
+        
+    </section> -->
+    <!-- <p>{{favoriteSeason |json}}</p> -->
+    </div>
+
+    <button type="button" *ngIf="items.id < 5" (click)="next(items.id)" mat-raised-button color="accent">Next</button>
+
+    <button type="button" *ngIf="items.id > 1" style="margin-left: 20px;" (click)="previous(items.id-1)" mat-raised-button color="accent">Previous</button>
+    <button type="button" *ngIf="items.id > 1"  style="margin-left: 20px;"  (click)="submit(items.options)" mat-raised-button color="accent">submit</button>
+</mat-card>
+</div>
+<div fxFlex="5"  ></div>
+<div fxFlex="40"  style="margin-top:130px">
+    <mat-card>
+        <h2>Question Index</h2>
+            <div *ngFor="let number of numbers " style="display: inline-block;">
+            <button type="button" mat-stroked-button (click)=onQuestion(number-1)>{{number}}</button>
+        </div>
+            
+        </mat-card>
+</div>
+<div fxFlex="5" ></div>
+</div>

@@ -1,0 +1,31 @@
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    margin-top: 99px;
+    height: 200;
+    margin-left: 290px;
+    margin-right: 290px;
+    width: auto;
+    height: auto;
+}
+
+th{
+    padding-right: 20px;
+}
+
+td{
+    text-align: center;
+}
+
+.linestyle{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    size: 30px;
+    /* width: 63px; */
+    height: 6px;
+    background-color: red;
+    /* color: deeppink; */
+}

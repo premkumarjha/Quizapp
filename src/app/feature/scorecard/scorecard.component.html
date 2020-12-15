@@ -1,0 +1,53 @@
+<mat-card>
+    <h2 style="background-color: deeppink;text-align: center;">Score Card</h2>
+    <hr>
+    <table>
+        <tr>
+          <th>Total Question</th>
+          <th>Attempted Question</th>
+          <th>unattempted Question</th>
+          <th>secured marks</th>
+        </tr>
+        <tr>
+          <td>{{myservice.totalNumberOfQuestion}}</td>
+          <td>{{attemtedQuestion}}</td>
+          <td>{{myservice.totalunattemptedquestion}}</td>
+          <td>{{myservice.totalScoredMarks}}</td>
+         
+        </tr>
+      </table>
+<hr class="linestyle">
+<fusioncharts
+  type='pie2d'
+  width='700'
+  height='400'
+  [dataSource]='dataSource'
+  (dataplotClick)='dataplotClick($event)'
+  (initialized)='initialized($event)'>
+</fusioncharts>
+<div style="display: flex; justify-content: center; bottom: 2px;">
+  <div class="change-type">
+    <div id="radio1">
+      <!-- <input name="slice-selecter" id="None"  [checked]="selectedSlice == 'none'" (change)="onRadioOptionChange('none')" /> -->
+      <!-- <label for="None">None</label> -->
+    </div>
+    <div id="radio2">
+      <input name="slice-selecter" id="Apache" type="radio" [checked]="selectedSlice == ' scored 3 or less than 3 marks'" (change)="onRadioOptionChange('scored 3 or less than 3 marks')" />
+      <label for="Apache">scored 3 or less than 3 marks</label>
+    </div>
+    <div id="radio3">
+      <input name="slice-selecter" id="Microsoft" type="radio" [checked]="selectedSlice == ' scored 4 marks'" (change)="onRadioOptionChange('scored 4 marks')" />
+      <label for="Microsoft">scored 4 marks</label>
+    </div>
+    <!-- <div id="radio4">
+      <input name="slice-selecter" id="Zeus" type="radio" [checked]="selectedSlice == 'zeus'" (change)="onRadioOptionChange('zeus')" />
+      <label for="Zeus">Zeus</label>
+    </div> -->
+    <div id="radio5">
+      <input name="slice-selecter" id="Other" type="radio" [checked]="selectedSlice == ' scored 5 marks'" (change)="onRadioOptionChange('scored 5 marks')" />
+      <label for="Other">scored 5 marks</label>
+    </div>
+  </div>
+</div>
+
+</mat-card>

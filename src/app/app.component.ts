@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+
   title = 'quizapp';
+
+
+  ngOnInit(): void {
+
+    console.log("app module loaded")
+  }
 }
+
+
+
